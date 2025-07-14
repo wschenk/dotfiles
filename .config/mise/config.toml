@@ -1,0 +1,28 @@
+[tools]
+go = "latest"
+node = "latest"
+pnpm = "latest"
+ruby = "3.4.1"
+uv = "latest"
+
+[tasks.commit-message]
+description = 'Writes a commit message'
+run = [ 'git diff HEAD | run-prompt code/git-commit-message' ]
+
+[tasks.llm-dump]
+description = 'Runs repomix'
+run = ['repomix --ignore "**/*.log,tmp/*"']
+
+[tasks.llm-clipboard]
+description = 'Copies repomix to the clipboard'
+run = [ 'cat repomix-output.txt | pbcopy']
+depends = [ 'llm-dump' ]
+
+[tasks.llm-lint]
+description = 'What does the model think about this'
+run = [ 'cat repomix-output.txt | run-prompt code/lint' ]
+depends = [ 'llm-dump' ]
+
+[settings]
+experimental = true
+idiomatic_version_file_enable_tools = []

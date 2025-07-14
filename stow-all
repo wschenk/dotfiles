@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Stow all packages in the current directory
+# Usage: ./stow-all [stow options]
+
+# Get all directories (packages) in current directory, excluding hidden ones
+packages=$(find . -maxdepth 1 -type d -not -name ".*" -not -name "." | sed 's|./||' | sort)
+
+if [ -z "$packages" ]; then
+    echo "No packages found to stow"
+    exit 1
+fi
+
+echo "Stowing packages: $packages"
+
+# Pass any arguments to stow (like -D for delete, -R for restow, etc.)
+for package in $packages; do
+    echo "Stowing $package..."
+    stow "$@" "$package"
+done
+
+echo "Done!"
