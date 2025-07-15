@@ -1,5 +1,6 @@
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/Users/wschenk/.local/bin/mise activate zsh)"
 
 . "/Users/wschenk/.deno/env"
 . "$HOME/.local/bin/env"
@@ -14,5 +15,3 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-eval "$(/Users/wschenk/.local/bin/mise activate zsh)"

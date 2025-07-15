@@ -3,3 +3,5 @@
 	email = wschenk@gmail.com
 [init]
 	defaultBranch = main
+[pull]
+	ff = only
