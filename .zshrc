@@ -8,3 +8,8 @@ compinit
 alias nd='cd $(mktemp -d)'
 
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/wschenk/.lmstudio/bin"
+# End of LM Studio CLI section
+
