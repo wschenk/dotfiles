@@ -24,6 +24,7 @@
 # | V         | Books                   | alt-v    | /Applications/Books.app |
 # | W         | WhatsApp, Messages      | alt-w    | /Applications/WhatsApp.app |
 # | X         | X (x.com), Elk          | alt-x    | ~/Applications/Chrome Apps.localized/X.app |
+# | Z         | Activity Monitor        | alt-z    | /System/Applications/Utilities/Activity Monitor.app |
 #
 # To add new applications:
 # 1. Add [[on-window-detected]] rule with app-name-regex-substring matching
@@ -199,6 +200,11 @@ run = ['move-node-to-workspace W']
 if.app-name-regex-substring = 'Messages'
 run = ['move-node-to-workspace W']
 
+# Activity Monitor to workspace Z
+[[on-window-detected]]
+if.app-name-regex-substring = 'Activity Monitor'
+run = ['move-node-to-workspace Z']
+
 
 
 # 'main' binding mode declaration
@@ -285,7 +291,7 @@ run = ['move-node-to-workspace W']
     alt-w = ['exec-and-forget open /Applications/WhatsApp.app', 'workspace W'] # WhatsApp/Messages workspace
     alt-x = ['exec-and-forget open ~/Applications/Chrome\ Apps.localized/X.app', 'workspace X'] # X Chrome app
     alt-y = 'workspace Y'
-    alt-z = 'workspace Z'
+    alt-z = ['exec-and-forget open /System/Applications/Utilities/Activity\ Monitor.app', 'workspace Z'] # Activity Monitor workspace
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
