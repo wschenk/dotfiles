@@ -17,6 +17,7 @@
 # | E         | Emacs                   | alt-e    | /Applications/Emacs.app |
 # | M         | Mimestream              | alt-m    | /Applications/Mimestream.app |
 # | N         | Obsidian                | alt-n    | /Applications/Obsidian.app |
+# | O         | Ollama                  | alt-o    | /Applications/Ollama.app |
 # | Q         | Weather                 | alt-q    | /System/Applications/Weather.app |
 # | S         | Slack                   | alt-s    | /Applications/Slack.app |
 # | T         | Terminal/Warp           | alt-t    | /Applications/Warp.app |
@@ -162,6 +163,11 @@ run = ['move-node-to-workspace M']
 if.app-name-regex-substring = 'Obsidian'
 run = ['move-node-to-workspace N']
 
+# Ollama to workspace O
+[[on-window-detected]]
+if.app-name-regex-substring = 'Ollama'
+run = ['move-node-to-workspace O']
+
 # Weather to workspace Q
 [[on-window-detected]]
 if.app-name-regex-substring = 'Weather'
@@ -280,7 +286,7 @@ run = ['move-node-to-workspace Z']
     alt-i = 'workspace I'
     alt-m = ['exec-and-forget open /Applications/Mimestream.app', 'workspace M'] # Mail workspace
     alt-n = ['exec-and-forget open /Applications/Obsidian.app', 'workspace N'] # Obsidian workspace
-    alt-o = 'workspace O'
+    alt-o = ['exec-and-forget open /Applications/Ollama.app', 'workspace O'] # Ollama workspace
     alt-p = 'workspace P'
     alt-q = ['exec-and-forget open /System/Applications/Weather.app', 'workspace Q'] # Weather workspace
     alt-r = 'workspace R'
