@@ -99,6 +99,10 @@ automatically-unhide-macos-hidden-apps = false
 if.app-name-regex-substring = 'Finder'
 run = 'layout floating'
 
+[[on-window-detected]]
+if.app-name-regex-substring = 'Granola'
+run = 'layout floating'
+
 # ChatGPT and Claude to workspace A
 [[on-window-detected]]
 if.app-name-regex-substring = 'ChatGPT'
