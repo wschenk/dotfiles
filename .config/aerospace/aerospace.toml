@@ -22,7 +22,7 @@
 # | S         | Slack                   | alt-s    | /Applications/Slack.app |
 # | T         | Terminal/Warp           | alt-t    | /Applications/Warp.app |
 # | U         | Unread                  | alt-u    | /Applications/Unread.app |
-# | V         | Books                   | alt-v    | /Applications/Books.app |
+# | V         | VLC, QuickTime          | alt-v    | /Applications/VLC.app |
 # | W         | WhatsApp, Messages      | alt-w    | /Applications/WhatsApp.app |
 # | X         | X (x.com), Elk          | alt-x    | ~/Applications/Chrome Apps.localized/X.app |
 # | Z         | Activity Monitor        | alt-z    | /System/Applications/Utilities/Activity Monitor.app |
@@ -102,6 +102,15 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-name-regex-substring = 'Granola'
 run = 'layout floating'
+
+# VLC and QuickTime to workspace V
+[[on-window-detected]]
+if.app-name-regex-substring = 'VLC'
+run = ['move-node-to-workspace V']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'QuickTime Player'
+run = ['move-node-to-workspace V']
 
 # ChatGPT and Claude to workspace A
 [[on-window-detected]]
@@ -196,10 +205,6 @@ run = ['move-node-to-workspace T']
 if.app-name-regex-substring = 'Unread'
 run = ['move-node-to-workspace U']
 
-# Books to workspace V
-[[on-window-detected]]
-if.app-name-regex-substring = 'Books'
-run = ['move-node-to-workspace V']
 
 # WhatsApp and Messages to workspace W
 [[on-window-detected]]
@@ -287,7 +292,11 @@ run = ['move-node-to-workspace Z']
     alt-e = ['exec-and-forget open /Applications/Emacs.app', 'workspace E'] # Emacs workspace
     alt-f = 'workspace F'
     alt-g = 'workspace G'
+    alt-h = 'workspace H'
     alt-i = 'workspace I'
+    alt-j = 'workspace J'
+    alt-k = 'workspace K'
+    alt-l = 'workspace L'
     alt-m = ['exec-and-forget open /Applications/Mimestream.app', 'workspace M'] # Mail workspace
     alt-n = ['exec-and-forget open /Applications/Obsidian.app', 'workspace N'] # Obsidian workspace
     alt-o = ['exec-and-forget open /Applications/Ollama.app', 'workspace O'] # Ollama workspace
@@ -297,7 +306,7 @@ run = ['move-node-to-workspace Z']
     alt-s = ['exec-and-forget open /Applications/Slack.app', 'workspace S'] # Slack workspace
     alt-t = ['exec-and-forget open /Applications/Warp.app', 'workspace T'] # Terminal/Warp workspace
     alt-u = ['exec-and-forget open /Applications/Unread.app', 'workspace U'] # Unread workspace
-    alt-v = ['exec-and-forget open /System/Applications/Books.app', 'workspace V'] # Books workspace
+    alt-v = ['exec-and-forget open /Applications/VLC.app', 'workspace V'] # Video players workspace
     alt-w = ['exec-and-forget open /Applications/WhatsApp.app', 'workspace W'] # WhatsApp/Messages workspace
     alt-x = ['exec-and-forget open ~/Applications/Chrome\ Apps.localized/X.app', 'workspace X'] # X Chrome app
     alt-y = 'workspace Y'
@@ -320,7 +329,11 @@ run = ['move-node-to-workspace Z']
     alt-shift-e = ['move-node-to-workspace E', 'workspace E']
     alt-shift-f = ['move-node-to-workspace F', 'workspace F']
     alt-shift-g = ['move-node-to-workspace G', 'workspace G']
+    alt-shift-h = ['move-node-to-workspace H', 'workspace H']
     alt-shift-i = ['move-node-to-workspace I', 'workspace I']
+    alt-shift-j = ['move-node-to-workspace J', 'workspace J']
+    alt-shift-k = ['move-node-to-workspace K', 'workspace K']
+    alt-shift-l = ['move-node-to-workspace L', 'workspace L']
     alt-shift-m = ['move-node-to-workspace M', 'workspace M']
     alt-shift-n = ['move-node-to-workspace N', 'workspace N']
     alt-shift-o = ['move-node-to-workspace O', 'workspace O']
