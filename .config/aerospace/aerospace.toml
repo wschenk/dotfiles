@@ -10,14 +10,14 @@
 # Current application mappings:
 # | Workspace | Application(s)          | Shortcut | App Path/Command |
 # |-----------|-------------------------|----------|------------------|
-# | A         | ChatGPT, Claude         | alt-a    | /Applications/ChatGPT.app |
-# | B         | Chrome (browsers)       | alt-b    | /Applications/Google Chrome.app |
+# | A         | ChatGPT                 | alt-a    | /Applications/ChatGPT.app |
+# | B         | Zen Browser (browsers)  | alt-b    | /Applications/Zen.app |
 # | C         | Cursor                  | alt-c    | /Applications/Cursor.app |
-# | D         | Discord                 | alt-d    | /Applications/Discord.app |
 # | E         | Emacs                   | alt-e    | /Applications/Emacs.app |
 # | M         | Mimestream              | alt-m    | /Applications/Mimestream.app |
 # | N         | Obsidian                | alt-n    | /Applications/Obsidian.app |
 # | O         | Ollama                  | alt-o    | /Applications/Ollama.app |
+# | P         | Pocket Casts            | alt-p    | /Applications/Pocket Casts.app |
 # | Q         | Weather                 | alt-q    | /System/Applications/Weather.app |
 # | S         | Slack                   | alt-s    | /Applications/Slack.app |
 # | T         | Terminal/Warp           | alt-t    | /Applications/Warp.app |
@@ -112,14 +112,15 @@ run = ['move-node-to-workspace V']
 if.app-name-regex-substring = 'QuickTime Player'
 run = ['move-node-to-workspace V']
 
-# ChatGPT and Claude to workspace A
+# ChatGPT to workspace A
 [[on-window-detected]]
 if.app-name-regex-substring = 'ChatGPT'
 run = ['move-node-to-workspace A']
 
+# Claude to workspace R
 [[on-window-detected]]
 if.app-name-regex-substring = 'Claude'
-run = ['move-node-to-workspace A']
+run = ['move-node-to-workspace R']
 
 # Browser to workspace B
 [[on-window-detected]]
@@ -143,6 +144,10 @@ run = ['move-node-to-workspace B']
 if.app-name-regex-substring = 'Arc'
 run = ['move-node-to-workspace B']
 
+[[on-window-detected]]
+if.app-name-regex-substring = 'Zen'
+run = ['move-node-to-workspace B']
+
 # X Chrome app and Elk to workspace X
 [[on-window-detected]]
 if.app-name-regex-substring = 'X'
@@ -152,10 +157,6 @@ run = ['move-node-to-workspace X']
 if.app-name-regex-substring = 'Elk'
 run = ['move-node-to-workspace X']
 
-# Discord to workspace D
-[[on-window-detected]]
-if.app-name-regex-substring = 'Discord'
-run = ['move-node-to-workspace D']
 
 # Emacs to workspace E
 [[on-window-detected]]
@@ -180,6 +181,11 @@ run = ['move-node-to-workspace N']
 [[on-window-detected]]
 if.app-name-regex-substring = 'Ollama'
 run = ['move-node-to-workspace O']
+
+# Pocket Casts to workspace P
+[[on-window-detected]]
+if.app-name-regex-substring = 'Pocket Casts'
+run = ['move-node-to-workspace P']
 
 # Weather to workspace Q
 [[on-window-detected]]
@@ -286,9 +292,9 @@ run = ['move-node-to-workspace Z']
     alt-8 = 'workspace 8'
     alt-9 = 'workspace 9'
     alt-a = ['exec-and-forget open /Applications/ChatGPT.app', 'workspace A'] # ChatGPT/Claude workspace
-    alt-b = ['exec-and-forget open /Applications/Google\ Chrome.app', 'workspace B'] # Browser workspace
+    alt-b = ['exec-and-forget open /Applications/Zen.app', 'workspace B'] # Browser workspace
     alt-c = ['exec-and-forget open /Applications/Cursor.app', 'workspace C'] # Cursor workspace
-    alt-d = ['exec-and-forget open /Applications/Discord.app', 'workspace D'] # Discord workspace
+    alt-d = 'workspace D'
     alt-e = ['exec-and-forget open /Applications/Emacs.app', 'workspace E'] # Emacs workspace
     alt-f = 'workspace F'
     alt-g = 'workspace G'
@@ -300,9 +306,9 @@ run = ['move-node-to-workspace Z']
     alt-m = ['exec-and-forget open /Applications/Mimestream.app', 'workspace M'] # Mail workspace
     alt-n = ['exec-and-forget open /Applications/Obsidian.app', 'workspace N'] # Obsidian workspace
     alt-o = ['exec-and-forget open /Applications/Ollama.app', 'workspace O'] # Ollama workspace
-    alt-p = 'workspace P'
+    alt-p = ['exec-and-forget open /Applications/Pocket\ Casts.app', 'workspace P'] # Pocket Casts workspace
     alt-q = ['exec-and-forget open /System/Applications/Weather.app', 'workspace Q'] # Weather workspace
-    alt-r = 'workspace R'
+    alt-r = ['exec-and-forget open /Applications/Claude.app', 'workspace R'] # Claude workspace
     alt-s = ['exec-and-forget open /Applications/Slack.app', 'workspace S'] # Slack workspace
     alt-t = ['exec-and-forget open /Applications/Warp.app', 'workspace T'] # Terminal/Warp workspace
     alt-u = ['exec-and-forget open /Applications/Unread.app', 'workspace U'] # Unread workspace

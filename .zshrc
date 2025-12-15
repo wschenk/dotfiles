@@ -13,3 +13,14 @@ alias nd='cd $(mktemp -d)'
 export PATH="$PATH:/Users/wschenk/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+# pnpm
+export PNPM_HOME="/Users/wschenk/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# Added by Antigravity
+export PATH="/Users/wschenk/.antigravity/antigravity/bin:$PATH"

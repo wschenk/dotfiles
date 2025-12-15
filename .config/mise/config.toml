@@ -11,7 +11,7 @@ run = [ 'git diff HEAD | run-prompt code/git-commit-message' ]
 
 [tasks.llm-dump]
 description = 'Runs repomix'
-run = ['repomix --ignore "**/*.log,tmp/*"']
+run = ['npx -y repomix --ignore "**/*.log,tmp/*"']
 
 [tasks.llm-clipboard]
 description = 'Copies repomix to the clipboard'
